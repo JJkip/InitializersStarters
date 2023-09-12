@@ -51,8 +51,21 @@ code(for: "Rewrite the Person Struct as a Class") {
 }
 code(for: "Rewite the class with flexible initializer") {
     
+    class Person {
+        var name: String
+        var age: Int
+        var numChildren: Int?
+        var married = false
+        
+        init(name: String, age: Int, numChildren: Int? = nil, married: Bool = false){
+            self.name = name
+            self.age = age
+            self.numChildren = numChildren
+            self.married = married
+        }
+    }
     // Create a person who has children and not married
-   
+    let p3 =  Person(name: "Faith", age: 24, married: false)
 }
 
 /*:
