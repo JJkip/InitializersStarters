@@ -29,7 +29,24 @@ code(for: "Struct Convenience initializers") {
 }
 
 code(for: "Rewrite as a Class") {
-   
+    class Person {
+        var name: String
+        var age: Int
+        var married: Bool
+        // recreate memberwise initializer
+        init(name: String, age: Int, married: Bool) {
+            self.name = name
+            self.age = age
+            self.married = married
+        }
+        // create an initializer that will default married status to true
+        /// Person who is married
+        convenience init(name: String, age: Int) {
+            self.init(name: name, age: age, married: true)
+        }
+    }
+    let p1 = Person(name: "Faith", age: 27)
+    print(p1.married)
 }
 /*:
 [< Previous](@previous)                    [Home](Introduction)
